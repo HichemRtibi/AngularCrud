@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Departement} from '../../models/departement';
+import {BsDatepickerConfig} from 'ngx-bootstrap';
 
 
 @Component({
@@ -9,6 +10,13 @@ import {Departement} from '../../models/departement';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
+  colorTheme = 'theme-green';
+
+  bsConfig: Partial<BsDatepickerConfig>;
+
+
+
+
 
   departements: Departement[] =
     [{'id': 1, 'name': 'HR'},
@@ -17,6 +25,7 @@ export class CreateEmployeeComponent implements OnInit {
       {'id': 4, 'name': 'Admin'}];
 
   constructor() {
+    this.bsConfig = Object.assign({}, { containerClass: 'theme-dark-blue',showWeekNumbers:false });
   }
 
   ngOnInit() {
