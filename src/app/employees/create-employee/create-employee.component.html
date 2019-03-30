@@ -40,6 +40,35 @@
       </div>
 
     </div>
+    <div class="form-group">
+      ContactPreferences:
+      <div class="form-control">
+
+        <label class="radio-inline">
+          <input type="radio" name="contactPreference" value="Phone" [(ngModel)]="contactPreference">
+          email
+
+        </label>
+        <label class="radio-inline">
+          <input type="radio" value="email" name="contactPreference" [(ngModel)]="contactPreference">
+          PhoneNumber
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- checkbox -->
+    <div class="form-group">
+      <div class="form-control">
+        <label class="checkbox-inline">
+          <input type="checkbox" name="isActive" [(ngModel)]="isActive" checked>
+          IsActive
+        </label>
+      </div>
+
+    </div>
 
   </div>
   <div class="panel-footer">
