@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {Departement} from '../../models/departement';
 
 
 @Component({
@@ -9,13 +10,20 @@ import {NgForm} from '@angular/forms';
 })
 export class CreateEmployeeComponent implements OnInit {
 
-  constructor() { }
+  departements: Departement[] =
+    [{'id': 1, 'name': 'HR'},
+      {'id': 2, 'name': 'IT'},
+      {'id': 3, 'name': 'payroll'},
+      {'id': 4, 'name': 'Admin'}];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  saveEmployee(em:NgForm):void{
-    console.log(em.value)
+  saveEmployee(em: NgForm): void {
+    console.log(em.value);
 
   }
 }

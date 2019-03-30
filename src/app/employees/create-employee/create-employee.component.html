@@ -1,92 +1,91 @@
 <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
-<div class="panel-primary">
-  <div class="panel-heading">
-    <div class="panel-title">
-      Create Employee
-
-    </div>
-
-  </div>
-  <div class="panel-body">
-    <div class="form-group">
-      <label for="fullname">Full Name:</label>
-      <input id="fullname" type="text" class="form-control" [(ngModel)]="fullName" name="fullName">
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" id="email" class="form-control" [(ngModel)]="email" name="email">
-
-    </div>
-    <div class="form-group">
-      <label for="phoneNumber">phoneNumber:</label>
-      <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber">
-
-    </div>
-    <div class="form-group">
-      Gender:
-      <div class="form-control">
-
-        <label class="radio-inline">
-          <input type="radio" name="gender" value="male" [(ngModel)]="gender">
-          Male
-
-        </label>
-        <label class="radio-inline">
-          <input type="radio" value="female" name="gender" [(ngModel)]="gender">
-          Female
-
-        </label>
+  <div class="panel-primary">
+    <div class="panel-heading">
+      <div class="panel-title">
+        Create Employee
 
       </div>
 
     </div>
-    <div class="form-group">
-      ContactPreferences:
-      <div class="form-control">
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input id="fullname" type="text" class="form-control" [(ngModel)]="fullName" name="fullName">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" class="form-control" [(ngModel)]="email" name="email">
 
-        <label class="radio-inline">
-          <input type="radio" name="contactPreference" value="Phone" [(ngModel)]="contactPreference">
-          email
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">phoneNumber:</label>
+        <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber">
 
-        </label>
-        <label class="radio-inline">
-          <input type="radio" value="email" name="contactPreference" [(ngModel)]="contactPreference">
-          PhoneNumber
+      </div>
+      <div class="form-group">
+        Gender:
+        <div class="form-control">
 
-        </label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" value="male" [(ngModel)]="gender">
+            Male
+
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="female" name="gender" [(ngModel)]="gender">
+            Female
+
+          </label>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+        ContactPreferences:
+        <div class="form-control">
+
+          <label class="radio-inline">
+            <input type="radio" name="contactPreference" value="Phone" [(ngModel)]="contactPreference">
+            email
+
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="email" name="contactPreference" [(ngModel)]="contactPreference">
+            PhoneNumber
+
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- checkbox -->
+      <div class="form-group">
+        <div class="form-control">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="isActive" [(ngModel)]="isActive" checked>
+            IsActive
+          </label>
+        </div>
+
+      </div>
+
+      <!-- select option -->
+      <div class="form-group">
+        <label>Departement</label>
+        <select class="form-control" [(ngModel)]="departement" name="departement">
+          <option *ngFor="let dept of departements" [value]="dept.id">{{dept.name}}</option>
+
+
+        </select>
 
       </div>
 
     </div>
-
-    <!-- checkbox -->
-    <div class="form-group">
-      <div class="form-control">
-        <label class="checkbox-inline">
-          <input type="checkbox" name="isActive" [(ngModel)]="isActive" checked>
-          IsActive
-        </label>
-      </div>
-
-    </div>
-
-    <!-- select option -->
-    <div class="form-group">
-      <label>Departement</label>
-      <select class="form-control" [(ngModel)]="departement" name="departement" >
-        <option value="1">IT</option>
-        <option value="2">Devellopement</option>
-        <option value="3">Reseau</option>
-
-      </select>
-
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit">Save</button>
     </div>
 
   </div>
-  <div class="panel-footer">
-    <button class="btn btn-primary" type="submit">Save</button>
-  </div>
-
-</div>
 </form>
 {{employeeForm.value | json}}
