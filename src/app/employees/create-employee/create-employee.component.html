@@ -17,6 +17,29 @@
       <input type="text" id="email" class="form-control" [(ngModel)]="email" name="email">
 
     </div>
+    <div class="form-group">
+      <label for="phoneNumber">phoneNumber:</label>
+      <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber">
+
+    </div>
+    <div class="form-group">
+      Gender:
+      <div class="form-control">
+
+        <label class="radio-inline">
+          <input type="radio" name="gender" value="male" [(ngModel)]="gender">
+          Male
+
+        </label>
+        <label class="radio-inline">
+          <input type="radio" value="female" name="gender" [(ngModel)]="gender">
+          Female
+
+        </label>
+
+      </div>
+
+    </div>
 
   </div>
   <div class="panel-footer">

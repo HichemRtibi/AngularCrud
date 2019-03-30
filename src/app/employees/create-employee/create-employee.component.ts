@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class CreateEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveEmployee(em):void{
+  saveEmployee(em:NgForm):void{
     console.log(em.value)
 
   }
