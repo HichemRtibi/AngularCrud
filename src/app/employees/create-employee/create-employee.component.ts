@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
@@ -12,4 +13,8 @@ export class CreateEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveEmployee(em):void{
+    console.log(em.value)
+
+  }
 }
