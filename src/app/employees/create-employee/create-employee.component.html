@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm" ngNativeValidate  (ngSubmit)="saveEmployee(employeeForm)">
+<form #employeeForm="ngForm" ngNativeValidate (ngSubmit)="saveEmployee(employeeForm)">
   <div class="panel-primary">
     <div class="panel-heading">
       <div class="panel-title">
@@ -8,9 +8,14 @@
 
     </div>
     <div class="panel-body">
-      <div class="form-group">
-        <label for="fullname">Full Name:</label>
-        <input required id="fullname" type="text" class="form-control" name="fullname" [(ngModel)]="fullName" #fullNameControl="ngModel">
+      <div class="form-group" [class.has-error]="fullNameControl.invalid">
+        <label for="fullname" class="control-label">Full Name:</label>
+
+        <input required id="fullname" type="text" class="form-control" name="fullname" [(ngModel)]="fullName"
+               #fullNameControl="ngModel">
+        <span class="help-block" *ngIf="fullNameControl.invalid">
+    Full Name is required
+  </span>
       </div>
 
 
@@ -130,7 +135,8 @@
       <!--Datepicker-->
       <div class="form-group">
         <label for="phoneNumber">Date of Birth:</label>
-        <input type="text" bsDatepicker [bsConfig]="bsConfig" class="form-control" [(ngModel)]="dateOfBirth" name="dateOfBirth">
+        <input type="text" bsDatepicker [bsConfig]="bsConfig" class="form-control" [(ngModel)]="dateOfBirth"
+               name="dateOfBirth">
 
       </div>
 
@@ -141,14 +147,16 @@
 
       </div>
       <div class="form-group">
-        <button type="button" class="btn btn-primary" (click)="togglePreviewPhoto()">{{photoPreview? "hide ":"show "}} Preview</button>
+        <button type="button" class="btn btn-primary"
+                (click)="togglePreviewPhoto()">{{photoPreview ? "hide " : "show "}} Preview
+        </button>
 
       </div>
       <div class="row" *ngIf="photoPreview">
-      <div class="form-group col-lg-4">
-        <img [src]="PhotoPath">
+        <div class="form-group col-lg-4">
+          <img [src]="PhotoPath">
 
-      </div>
+        </div>
       </div>
 
 
