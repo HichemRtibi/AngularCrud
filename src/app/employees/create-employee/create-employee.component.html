@@ -20,11 +20,11 @@
       </div>
 
 
-      <div [class.has-error]="email.invalid && email.touched" class="form-group">
+      <div [class.has-error]="email.invalid" class="form-group">
         <label class="control-label" for="email">Email</label>
         <input #email="ngModel" [(ngModel)]="employee.email" class="form-control" id="email"
                name="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-               required type="text">
+               [required]="contactPreference.value=='email'" type="text">
         <span *ngIf="email.errors?.required && email.touched" class="help-block">
     Email is required
   </span>
@@ -32,10 +32,14 @@
     Email is Invalid
   </span>
       </div>
-      <div class="form-group">
-        <label for="phoneNumber">phoneNumber:</label>
-        <input [(ngModel)]="employee.phoneNumber" class="form-control" id="phoneNumber" name="phoneNumber" type="text">
-
+      <div [class.has-error]="phoneNumber.invalid" class="form-group">
+        <label class="control-label" for="email">Phone Number</label>
+        <input #phoneNumber="ngModel" [(ngModel)]="employee.phoneNumber" class="form-control" id="phoneNumber"
+               name="phoneNumber"
+               [required]="contactPreference.value=='phone'" type="text">
+        <span *ngIf="phoneNumber.invalid && phoneNumber.touched" class="help-block">
+    phoneNumber is required
+        </span>
       </div>
       <div class="form-group" [class.has-error]="gender.invalid &&gender.touched">
         <label class="control-label">Gender</label>
