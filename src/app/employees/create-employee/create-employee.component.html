@@ -20,11 +20,16 @@
       </div>
 
 
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input required type="text" id="email" class="form-control" [(ngModel)]="employee.email" name="email">
-
+      <div class="form-group" [class.has-error]="email.invalid && email.touched">
+        <label for="email" class="control-label">Email</label>
+        <input id="email" required email type="text" class="form-control" name="email"
+               [(ngModel)]="employee.email" #email="ngModel">
+        <span class="help-block" *ngIf="email.errors?.required && email.touched">
+    Email is required
+  </span>
+        <span class="help-block" *ngIf="email.errors?.email && email.touched">
+    Email is Invalid
+  </span>
       </div>
       <div class="form-group">
         <label for="phoneNumber">phoneNumber:</label>
@@ -110,7 +115,7 @@
         </button>
 
       </div>
-      <div class="row" *ngIf="photoPreview">
+      <div class="form-group" *ngIf="photoPreview">
         <div class="form-group col-lg-4">
           <img [src]="employee.photoPath">
 
