@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Departement} from '../../models/departement';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
+import {Employees} from '../../models/employees';
 
 
 @Component({
@@ -11,12 +12,23 @@ import {BsDatepickerConfig} from 'ngx-bootstrap';
 })
 export class CreateEmployeeComponent implements OnInit {
   colorTheme = 'theme-green';
-  photoPreview:boolean=false;
+  photoPreview: boolean = false;
 
   bsConfig: Partial<BsDatepickerConfig>;
 
-
-
+  employee: Employees =
+    {
+      id: null,
+      name: null,
+      gender: null,
+      email: null,
+      phoneNumber: null,
+      contactPreference: null,
+      dateOfBirth: null,
+      department: null,
+      isActive: null,
+      photoPath: null,
+    };
 
 
   departements: Departement[] =
@@ -26,20 +38,23 @@ export class CreateEmployeeComponent implements OnInit {
       {'id': 4, 'name': 'Admin'}];
 
   constructor() {
-    this.bsConfig = Object.assign({}, { containerClass: 'theme-dark-blue',showWeekNumbers:false
-    ,minDate :new  Date(2018,0,1),
-    maxDate:new Date(2018,11,31),
-    dateInputFormat:'DD/MM/YYYY'});
+    this.bsConfig = Object.assign({}, {
+      containerClass: 'theme-dark-blue', showWeekNumbers: false
+      , minDate: new Date(2018, 0, 1),
+      maxDate: new Date(2018, 11, 31),
+      dateInputFormat: 'DD/MM/YYYY'
+    });
   }
 
   ngOnInit() {
   }
-  togglePreviewPhoto(){
-    this.photoPreview=!this.photoPreview
+
+  togglePreviewPhoto() {
+    this.photoPreview = !this.photoPreview;
   }
 
-  saveEmployee(em: NgForm): void {
-    console.log(em.value);
+  saveEmployee(employee:Employees): void {
+    console.log(employee);
 
   }
 }
