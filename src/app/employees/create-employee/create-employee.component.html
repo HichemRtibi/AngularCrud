@@ -91,14 +91,21 @@
       </div>
 
       <!-- select option -->
-      <div class="form-group">
-        <label>Departement</label>
-        <select [(ngModel)]="employee.department" class="form-control" name="departement">
-          <option *ngFor="let dept of departements" [value]="dept.id">{{dept.name}}</option>
-
-
+      <div class="form-group"
+           [class.has-error]="department.touched && department.invalid">
+        <label for="department" class="control-label">Department</label>
+        <select required #department="ngModel" name="department"
+                [(ngModel)]="employee.department" id="department"
+                class="form-control">
+          <option [ngValue]="null">Select Department</option>
+          <option *ngFor="let dept of departments" [value]="dept.id">
+            {{dept.name}}
+          </option>
         </select>
-
+        <span class="help-block"
+              *ngIf="department.touched && department.errors?.required">
+    Department is required
+  </span>
       </div>
 
       <!--Datepicker-->

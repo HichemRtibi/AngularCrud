@@ -31,7 +31,7 @@ export class CreateEmployeeComponent implements OnInit {
     };
 
 
-  departements: Departement[] =
+  departments: Departement[] =
     [{'id': 1, 'name': 'HR'},
       {'id': 2, 'name': 'IT'},
       {'id': 3, 'name': 'payroll'},
