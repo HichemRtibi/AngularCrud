@@ -11,6 +11,7 @@ import {BsDatepickerConfig} from 'ngx-bootstrap';
 })
 export class CreateEmployeeComponent implements OnInit {
   colorTheme = 'theme-green';
+  photoPreview:boolean=false;
 
   bsConfig: Partial<BsDatepickerConfig>;
 
@@ -32,6 +33,9 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  togglePreviewPhoto(){
+    this.photoPreview=!this.photoPreview
   }
 
   saveEmployee(em: NgForm): void {
