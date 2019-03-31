@@ -8,7 +8,8 @@
 
     </div>
     <div class="panel-body">
-      <div class="form-group" [class.has-error]="fullNameControl.invalid">
+      <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched"
+           [class.has-success]="fullNameControl.valid">
         <label for="fullname" class="control-label">Full Name:</label>
 
         <input required id="fullname" type="text" class="form-control" name="fullname" [(ngModel)]="fullName"
