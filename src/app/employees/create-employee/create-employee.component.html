@@ -10,8 +10,31 @@
     <div class="panel-body">
       <div class="form-group">
         <label for="fullname">Full Name:</label>
-        <input id="fullname" type="text" class="form-control" [(ngModel)]="fullName" name="fullName">
+        <input required id="fullname" type="text" class="form-control" name="fullname" [(ngModel)]="fullName" #fullNameControl="ngModel">
       </div>
+
+
+      <table border=1 style="border-collapse:collapse; font-family:Arial; table-layout: fixed">
+        <tr style="background-color:rgb(170, 120, 12); font-weight: bold">
+          <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
+            <h4>Full Name Field</h4>
+          </td>
+        </tr>
+        <tr style="background-color:rgb(212, 149, 13); font-weight: bold">
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>touched : {{ fullNameControl.touched }}</div>
+            <div>untouched : {{ fullNameControl.untouched }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>pristine : {{ fullNameControl.pristine }}</div>
+            <div>dirty : {{ fullNameControl.dirty }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>valid : {{ fullNameControl.valid }}</div>
+            <div>invalid : {{ fullNameControl.invalid }}</div>
+          </td>
+        </tr>
+      </table>
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="text" id="email" class="form-control" [(ngModel)]="email" name="email">
