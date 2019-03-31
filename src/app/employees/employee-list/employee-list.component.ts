@@ -15,7 +15,7 @@ export class EmployeeListComponent implements OnInit {
       "email":"Mary@yahoo.fr",
       "contactPreference": "Phone",
       "phoneNumber": "2345978640",
-      "dateOfBirth": "1979/11/20",
+      "dateOfBirth": new Date(),
       "department": "2",
       "isActive": true,
       "photoPath": "assets/images/mary.png"
@@ -27,7 +27,7 @@ export class EmployeeListComponent implements OnInit {
       "email":"john@yahoo.fr",
       "contactPreference": "Phone",
       "phoneNumber": "5432978640",
-      "dateOfBirth": "1976/3/25",
+      "dateOfBirth": new Date(),
       "department": "3",
       "isActive": false,
       "photoPath": "assets/images/john.png"
@@ -40,7 +40,7 @@ export class EmployeeListComponent implements OnInit {
       "contactPreference": "Phone",
       "phoneNumber": "34345",
 
-      "dateOfBirth": "2018-07-01T08:20:34.000Z",
+      "dateOfBirth": new Date(),
       "department": "3",
       "isActive": true,
       "photoPath": "assets/images/john.png"
