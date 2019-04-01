@@ -38,8 +38,11 @@
               depatement
 
             </div>
-            <div class="col-xs-4">
-              :{{employee.department}}
+            <div class="col-xs-4" [ngSwitch]="employee.department">
+              <span *ngSwitchCase="1">HR</span>
+              <span *ngSwitchCase="2">IT</span>
+              <span *ngSwitchCase="3">payroll</span>
+              <span *ngSwitchDefault>N/A</span>
 
             </div>
           </div>
