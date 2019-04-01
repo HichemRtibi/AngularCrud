@@ -5,7 +5,7 @@
 </h1>
 
 <div *ngFor="let employee of employees">
-  <div (click)="h1variable.innerHTML=childComponent.employee.name + ' ' + childComponent.employee.gender ">
+  <div (click)="h1variable.innerHTML=childComponent.getEmployeeNameAndGender()">
   <app-display-employee [employee]="employee" #childComponent ></app-display-employee>
   </div>
 </div>

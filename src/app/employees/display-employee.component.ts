@@ -10,7 +10,9 @@ export class DisplayEmployeeComponent implements OnInit {
   @Input()
   employee:Employees;
 
-
+  getEmployeeNameAndGender(){
+    return this.employee.gender + ' '+this.employee.name;
+  }
 
   constructor() { }
 
