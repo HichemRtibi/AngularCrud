@@ -3,6 +3,8 @@ import {NgForm} from '@angular/forms';
 import {Departement} from '../../models/departement';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
 import {Employees} from '../../models/employees';
+import {EmployeeService} from '../employee.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -37,7 +39,7 @@ export class CreateEmployeeComponent implements OnInit {
       {'id': 3, 'name': 'payroll'},
       {'id': 4, 'name': 'Admin'}];
 
-  constructor() {
+  constructor(private employeeservice:EmployeeService ,private router:Router) {
     this.bsConfig = Object.assign({}, {
       containerClass: 'theme-dark-blue', showWeekNumbers: false
       , minDate: new Date(2018, 0, 1),
@@ -53,8 +55,10 @@ export class CreateEmployeeComponent implements OnInit {
     this.photoPreview = !this.photoPreview;
   }
 
-  saveEmployee(employee:Employees): void {
-    console.log(employee);
+  saveEmployee(): void {
+    this.employeeservice.saveEmployee(this.employee);
+    this.router.navigate(['list'])
+
 
   }
 }

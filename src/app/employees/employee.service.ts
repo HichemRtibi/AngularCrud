@@ -49,8 +49,12 @@ export class EmployeeService {
   constructor() {
   }
 
-  getEmployees(){
+  getEmployees() {
     return this.listEmployee;
 
+  }
+
+  saveEmployee(employee: Employees) {
+    this.listEmployee.push(employee);
   }
 }
