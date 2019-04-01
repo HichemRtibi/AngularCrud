@@ -7,6 +7,7 @@ import {EmployeeListComponent} from './employees/employee-list/employee-list.com
 import {CreateEmployeeComponent} from './employees/create-employee/create-employee.component';
 import {FormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import { DisplayEmployeeComponent } from './employees/display-employee.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     AppComponent,
     EmployeeListComponent,
     CreateEmployeeComponent,
+    DisplayEmployeeComponent,
 
   ],
   imports: [

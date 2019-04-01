@@ -1,4 +1,10 @@
-<div class="panel panel-primary" *ngFor="let employee of employees">
-<app-display-employee [employee]="employee"></app-display-employee>
+
+
+<h1>
+  {{dataFromChild}}
+</h1>
+
+<div *ngFor="let employee of employees">
+  <app-display-employee [employee]="employee" (notify)="handleNotify($event)"></app-display-employee>
 
 </div>

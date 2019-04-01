@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Employees} from '../models/employees';
 
 @Component({
@@ -10,9 +10,16 @@ export class DisplayEmployeeComponent implements OnInit {
   @Input()
   employee:Employees;
 
+  @Output()
+  notify:EventEmitter<string>=new EventEmitter<string>()
+
   constructor() { }
 
   ngOnInit() {
+  }
+  handleClick(){
+    this.notify.emit(this.employee.name);
+
   }
 
 }
