@@ -10,16 +10,12 @@ export class DisplayEmployeeComponent implements OnInit {
   @Input()
   employee:Employees;
 
-  @Output()
-  notify:EventEmitter<Employees>=new EventEmitter<Employees>()
+
 
   constructor() { }
 
   ngOnInit() {
   }
-  handleClick(){
-    this.notify.emit(this.employee);
 
-  }
 
 }
