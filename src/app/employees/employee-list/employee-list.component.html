@@ -1,7 +1,7 @@
 
 
-<h1>
-  {{dataFromChild}}
+<h1 *ngIf="dataFromChild">
+  {{dataFromChild?.name + ' ' +dataFromChild?.gender}}
 </h1>
 
 <div *ngFor="let employee of employees">
